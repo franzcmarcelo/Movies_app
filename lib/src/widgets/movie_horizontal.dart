@@ -42,17 +42,24 @@ class MovieHorizonral extends StatelessWidget {
   }
 
   Widget _createCard( BuildContext context, Movie movie ){
+
+    movie.uniqueId = '${movie.id}-carHorizontal';
+
     final card = Container(
       margin: EdgeInsets.only(right: 15.0),
       child: Column(
         children: <Widget>[
-          ClipRRect(
-            borderRadius: BorderRadius.circular(15.0),
-            child: FadeInImage(
-              image: NetworkImage(movie.getPoster()),
-              placeholder: AssetImage('assets/img/no-image.jpg'),
-              fit: BoxFit.cover,
-              height: 153.0,
+          // FIXME: Hero Animation
+          Hero(
+            tag: movie.uniqueId,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15.0),
+              child: FadeInImage(
+                image: NetworkImage(movie.getPoster()),
+                placeholder: AssetImage('assets/img/no-image.jpg'),
+                fit: BoxFit.cover,
+                height: 153.0,
+              ),
             ),
           ),
           SizedBox(height: 3.0,),

@@ -61,11 +61,14 @@ class MovieDetail extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10.0),
       child: Row(
         children: <Widget>[
-          ClipRRect(
+          Hero(
+            tag: movie.uniqueId,
+            child: ClipRRect(
               borderRadius: BorderRadius.circular(20.0),
               child: Image(
-              image: NetworkImage(movie.getPoster()),
-              height: 150.0,
+                image: NetworkImage(movie.getPoster()),
+                height: 150.0,
+              ),
             ),
           ),
           SizedBox(width: 20.0),
