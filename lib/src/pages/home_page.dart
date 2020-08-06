@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Cartelera'),
+        title: Text('Cartelera :)'),
         backgroundColor: Colors.indigoAccent,
         actions: <Widget>[
           IconButton(
